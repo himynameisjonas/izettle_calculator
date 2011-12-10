@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iZettle calculator</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+        function calculateChargesFromAmount(amount){
+            var charges = 1.5
+            charges += amount * 0.0275
+            return parseFloat(charges.toFixed(2))
+        };
+        
+        function calculateChargesFromCash(cash){
+            var charges = 1.5
+            charges += ((cash + charges) / 97.25) * 2.75
+            return parseFloat(charges.toFixed(2))
+        }
+
+        $(function() {
+            var amountField  = $("#amount");
+            var chargesField = $("#charges");
+            var cashField    = $("#cash");
+
+            amountField.keyup(function(){
+                var amount = parseFloat(amountField.val());
+                var charges = calculateChargesFromAmount(amount);
+                chargesField.val(charges);
+                cashField.val(amount - charges);
+            });
+            
+            
+            cashField.keyup(function(){
+                var cash = parseFloat(cashField.val());
+                var charges = calculateChargesFromCash(cash);
+                chargesField.val(charges);
+                amountField.val(cash + charges);
+            });
+        });
+        
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="hero-unit">
+        <h1>iZettle calculator</h1>
+        <p>Räkna ut konstaden för ett kortköp med iZettle.</p>
+      </div>
+
+      <div class="row">
+        <div class="span-one-third">
+          <h2>Köpsumma</h2>
+          <p>Summan som dras från kortet.</p>
+          <div class="input-prepend">
+                <span class="add-on">SEK</span>
+                <input class="x-large" id="amount" name="prependedInput" type="text">
+          </div>
+        </div>
+        <div class="span-one-third">
+          <h2>Avgifter</h2>
+          <p>De avgifter som iZettle tar för kortköpet.</p>
+          <div class="input-prepend">
+                <span class="add-on">SEK</span>
+                <input class="x-large" id="charges" disabled="disabled" name="prependedInput" type="text">
+          </div>
+       </div>
+        <div class="span-one-third">
+          <h2>Pengar i Plånboken</h2>
+          <p>Summan du kommer få insatt på ditt bankkonto</p>
+          <div class="input-prepend">
+                <span class="add-on">SEK</span>
+                <input class="x-large" id="cash" name="prependedInput" type="text">
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p><small>Denna webbplats är inte associerad med iZettle utan framtagen helt för nöjes skull av <a href="http://jonasforsberg.se">Jonas Forsberg</a>. Beräknad med 1,50 kr + 2,75% i avgift. Summorna rundas av och är därför inte exakta.</small></p>
+      </footer>
+    </div>
+
+    <a href="http://github.com/himynameisjonas/izettle_calculator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+
+  </body>
+</html>
