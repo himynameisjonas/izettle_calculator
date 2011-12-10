@@ -1,14 +1,16 @@
 CACHE MANIFEST
-# Offline cache 11
+# Offline cache 12
 
 CACHE:
 # html files
 /
 
 # assets
-jquery.min.js
-bookmark_bubble.js
-bootstrap.min.css
+javascripts/jquery.min.js
+javascripts/bookmark_bubble.js
+javascripts/calculator.js
+stylesheets/bootstrap.min.css
+stylesheets/style.css
 github.png
 
 NETWORK:

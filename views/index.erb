@@ -8,172 +8,23 @@
     <meta property="og:title" content="Kortkostnad.se"/>
     <meta property="og:description" content="Räkna ut kostnaden för ett kortköp med iZettle"/>
     <meta property="og:type" content="website">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <style type="text/css">
-        .input-prepend .add-on, .input-append .add-on, input{
-            height: 1em;
-            line-height: 1em;
-            font-size: 2.5em;
-        }
-        #github{
-             position: absolute;
-             top: 0;
-             right: 0;
-             border: 0;
-        }
-        
-        iframe, fb_iframe_widget{
-            float: left;
-        }
-
-        .hero-unit h1 {
-            font-size: 70px;
-        }
-
-    @media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
-        .container{
-            width: 100%;
-        }
-        
-        .hero-unit{
-            padding: 10%;
-        }
-        .hero-unit h1 {
-            font-size: 35px;
-        }
-        .row{
-            margin: 0;
-        }
-        .row > [class*="span"] {
-            margin: 0 0 30px 0;
-        }
-        .span-one-third, footer{
-            padding: 0 10%;
-            width: 80%;
-        }
-        footer{
-            padding-top: 10px;
-        }
-        input{
-            width: 75%;
-        }
-        .input-prepend .add-on, .input-append .add-on, input{
-            height: 2em;
-            line-height: 2em;
-            font-size: 1.7em;
-        }
-        #github{
-            display: none;
-        }
-    }
-    </style>
-    <script src="jquery.min.js"></script>
-    <script>
-        function calculateChargesFromAmount(amount){
-            var charges = 1.5;
-            charges += amount * 0.0275;
-            return parseFloat(charges.toFixed(2));
-        };
-        
-        function calculateChargesFromCash(cash){
-            var charges = 1.5;
-            charges += ((cash + charges) / 97.25) * 2.75;
-            return parseFloat(charges.toFixed(2));
-        };
-
-        function prepareOutputValue(value){
-            if (isNaN(value)) {
-                return "";
-            }else{
-                return value.toString().replace(".",",");
-            }
-        };
-
-        function prepareInputValue(value){
-            return parseFloat(value.replace(/ /g,"").replace(",","."));
-        };
-
-        $(function() {
-            var amountField  = $("#amount");
-            var chargesField = $("#charges");
-            var cashField    = $("#cash");
-
-            amountField.keyup(function(){
-                var amount = prepareInputValue(amountField.val());
-                var charges = calculateChargesFromAmount(amount);
-                chargesField.val(prepareOutputValue(charges));
-                cashField.val(prepareOutputValue(amount - charges));
-            });
-            
-            
-            cashField.keyup(function(){
-                var cash = prepareInputValue(cashField.val());
-                var charges = calculateChargesFromCash(cash);
-                chargesField.val(prepareOutputValue(charges));
-                amountField.val(prepareOutputValue(cash + charges));
-            });
-        });
-        
-    </script>
-    <script type="application/javascript" src="bookmark_bubble.js"></script>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/calculator.js"></script>
+    <script type="text/javascript" src="/javascripts/bookmark_bubble.js"></script>
     <script type="text/javascript">
-    /*
-      Copyright 2010 Google Inc.
-    
-      Licensed under the Apache License, Version 2.0 (the "License");
-      you may not use this file except in compliance with the License.
-      You may obtain a copy of the License at
-    
-           http://www.apache.org/licenses/LICENSE-2.0
-    
-      Unless required by applicable law or agreed to in writing, software
-      distributed under the License is distributed on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-      See the License for the specific language governing permissions and
-      limitations under the License.
-    */
-    
-    /** @fileoverview Example of how to use the bookmark bubble. */
-
-     $(function() {
-      window.setTimeout(function() {
-        var bubble = new google.bookmarkbubble.Bubble();
-    
-        var parameter = 'bmb=1';
-    
-        bubble.hasHashParameter = function() {
-          return window.location.hash.indexOf(parameter) != -1;
-        };
-    
-        bubble.setHashParameter = function() {
-          if (!this.hasHashParameter()) {
-            window.location.hash += parameter;
-          }
-        };
-        bubble.showIfAllowed();
-      }, 1000);
-    });
-
-    </script>
-    <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-27638278-1']);
       _gaq.push(['_trackPageview']);
-
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
     </script>
   </head>
 
