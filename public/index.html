@@ -69,27 +69,27 @@
     <script src="jquery.min.js"></script>
     <script>
         function calculateChargesFromAmount(amount){
-            var charges = 1.5
-            charges += amount * 0.0275
-            return parseFloat(charges.toFixed(2))
+            var charges = 1.5;
+            charges += amount * 0.0275;
+            return parseFloat(charges.toFixed(2));
         };
         
         function calculateChargesFromCash(cash){
-            var charges = 1.5
-            charges += ((cash + charges) / 97.25) * 2.75
-            return parseFloat(charges.toFixed(2))
+            var charges = 1.5;
+            charges += ((cash + charges) / 97.25) * 2.75;
+            return parseFloat(charges.toFixed(2));
         };
 
         function prepareOutputValue(value){
             if (isNaN(value)) {
-                return ""
+                return "";
             }else{
-                return value.toString().replace(".",",")
+                return value.toString().replace(".",",");
             }
         };
 
         function prepareInputValue(value){
-            return parseFloat(value.replace(/ /g,"").replace(",","."))
+            return parseFloat(value.replace(/ /g,"").replace(",","."));
         };
 
         $(function() {
