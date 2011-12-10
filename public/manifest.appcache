@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Offline cache 12
+# Offline cache 13
 
 CACHE:
 # html files
@@ -12,6 +12,7 @@ javascripts/calculator.js
 stylesheets/bootstrap.min.css
 stylesheets/style.css
 github.png
+apple-touch-icon-iphone.png
 
 NETWORK:
 *
