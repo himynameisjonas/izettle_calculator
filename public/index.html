@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" manifest="izettle-calculator.manifest">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
-    <title>iZettle calculator</title>
+    <title>iZettle calculator - Räkna ut konstaden för ett kortköp med iZettle</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -25,6 +25,10 @@
              top: 0;
              right: 0;
              border: 0;
+        }
+        
+        iframe, fb_iframe_widget{
+            float: left;
         }
     @media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
         .container{
@@ -139,10 +143,23 @@
   </head>
 
   <body>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=137067219714522";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
       <div class="hero-unit">
         <h1>iZettle calculator</h1>
         <p>Räkna ut konstaden för ett kortköp med iZettle.</p>
+        <p>
+            <div class="fb-like" data-href="http://izettle-calculator.heroku.com/index.html" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="recommend"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-via="himynameisjonas" data-related="himynameisjonas" data-count="horizontal" data-url="http://izettle-calculator.heroku.com/index.html">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </p>
       </div>
 
       <div class="row">

@@ -1,6 +1,7 @@
 CACHE MANIFEST
+# Offline cache 5
 
-# Offline cache v3
+CACHE:
 # html files
 index.html
 
@@ -9,3 +10,6 @@ jquery.min.js
 bookmark_bubble.js
 bootstrap.min.css
 github.png
+
+NETWORK:
+*
