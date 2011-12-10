@@ -10,12 +10,44 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
     <style type="text/css">
-      body {
-        padding-top: 60px;
-      }
+        .input-prepend .add-on, .input-append .add-on, input{
+            height: 1em;
+            line-height: 1em;
+            font-size: 2.5em;
+        }
+    @media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
+        .container{
+            width: 100%;
+        }
+        
+        .hero-unit{
+            padding: 10%;
+        }
+        .row{
+            margin: 0;
+        }
+        .row > [class*="span"] {
+            margin: 0 0 30px 0;
+        }
+        .span-one-third, footer{
+            padding: 0 10%;
+            width: 80%;
+        }
+        footer{
+            padding-top: 10px;
+        }
+        input{
+            width: 75%;
+        }
+        .input-prepend .add-on, .input-append .add-on, input{
+            height: 2em;
+            line-height: 2em;
+            font-size: 1.7em;
+        }
+    }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>
