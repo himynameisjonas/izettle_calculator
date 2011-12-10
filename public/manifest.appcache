@@ -3,7 +3,7 @@ CACHE MANIFEST
 
 CACHE:
 # html files
-index.html
+/
 
 # assets
 jquery.min.js
