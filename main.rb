@@ -4,7 +4,7 @@ end
 
 before do
   if ENV['RACK_ENV'] == "production"
-    return redirect("http://kortkostnad.se") unless request.host =~ /kortkostnad.se/
+    return redirect("http://kortkostnad.se", 301) unless request.host =~ /kortkostnad.se/
   end
 end
 
