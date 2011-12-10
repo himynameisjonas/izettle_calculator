@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+# Offline cache v1
+# html files
+index.html
+
+# assets
+jquery.min.js
+bookmark_bubble.js
+bootstrap.min.css
+github.png
