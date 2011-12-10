@@ -78,7 +78,15 @@
             var charges = 1.5
             charges += ((cash + charges) / 97.25) * 2.75
             return parseFloat(charges.toFixed(2))
-        }
+        };
+
+        function commaNoDot(value){
+            return value.toString().replace(".",",")
+        };
+
+        function prepareInputValue(value){
+            return parseFloat(value.replace(/ /g,"").replace(",","."))
+        };
 
         $(function() {
             var amountField  = $("#amount");
@@ -86,18 +94,18 @@
             var cashField    = $("#cash");
 
             amountField.keyup(function(){
-                var amount = parseFloat(amountField.val());
+                var amount = prepareInputValue(amountField.val());
                 var charges = calculateChargesFromAmount(amount);
-                chargesField.val(charges);
-                cashField.val(amount - charges);
+                chargesField.val(commaNoDot(charges));
+                cashField.val(commaNoDot(amount - charges));
             });
             
             
             cashField.keyup(function(){
-                var cash = parseFloat(cashField.val());
+                var cash = prepareInputValue(cashField.val());
                 var charges = calculateChargesFromCash(cash);
-                chargesField.val(charges);
-                amountField.val(cash + charges);
+                chargesField.val(commaNoDot(charges));
+                amountField.val(commaNoDot(cash + charges));
             });
         });
         
