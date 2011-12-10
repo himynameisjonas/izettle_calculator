@@ -1,10 +1,11 @@
-before do
-  if env['sinatra.environment'] == "production"
-    return redirect("http://kortkostnad.se") unless request.host =~ /izettle.dev/
-  end
-end
 configure do
   Rack::Mime::MIME_TYPES[".appcache"] = "text/cache-manifest"
+end
+
+before do
+  if ENV['RACK_ENV'] == "production"
+    return redirect("http://kortkostnad.se") unless request.host =~ /kortkostnad.se/
+  end
 end
 
 get '/' do
