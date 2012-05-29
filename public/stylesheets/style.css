@@ -3,19 +3,31 @@
     line-height: 1em;
     font-size: 2.5em;
 }
-#github{
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-}
 
-iframe, fb_iframe_widget{
+iframe, .fb_iframe_widget{
     float: left;
+    height: 22px ! important;
+    margin: 0 5px 5px 0;
 }
 
-.hero-unit h1 {
+.header {
+    padding: 60px;
+    background: url('/texture.png');
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.header .row {
+    padding-left: 20px;
+}
+
+.header h1 {
+    color: #fff;
     font-size: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1C85CE;
 }
 
 @media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
@@ -23,10 +35,14 @@ iframe, fb_iframe_widget{
         width: 100%;
     }
 
-    .hero-unit{
-        padding: 10%;
+    .header{
+        padding: 19px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+
     }
-    .hero-unit h1 {
+    .header h1 {
         font-size: 35px;
     }
     .row{
@@ -49,8 +65,5 @@ iframe, fb_iframe_widget{
         height: 2em;
         line-height: 2em;
         font-size: 1.7em;
-    }
-    #github{
-        display: none;
     }
 }

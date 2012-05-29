@@ -50,53 +50,56 @@
         js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=137067219714522";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="container">
-      <div class="hero-unit">
-        <h1>Kortkostnad.se</h1>
-        <p>Räkna ut kostnaden för ett kortköp med iZettle.</p>
-        <p>
-            <div class="fb-like" data-href="http://kortkostnad.se/index.html" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="recommend"></div>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-via="himynameisjonas" data-related="himynameisjonas" data-hashtags="izettle" data-count="horizontal" data-url="http://kortkostnad.se">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://kortkostnad.se/"></a>
-            <noscript><a href="http://flattr.com/thing/450665/Kortkostnad-se" target="_blank">
-            <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
-        </p>
+
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <h1>Kortkostnad.se</h1>
+          <p>Räkna ut kostnaden för ett kortköp med iZettle.</p>
+          <p>
+              <div class="fb-like" data-href="http://kortkostnad.se/index.html" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" data-action="recommend"></div>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-via="himynameisjonas" data-related="himynameisjonas" data-hashtags="izettle" data-count="horizontal" data-url="http://kortkostnad.se">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://kortkostnad.se/"></a>
+              <noscript><a href="http://flattr.com/thing/450665/Kortkostnad-se" target="_blank">
+              <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+          </p>
+        </div>
       </div>
+    </div>
+    <div class="container">
 
       <div class="row">
         <div class="span-one-third">
+          <h2>Pengar på kontot</h2>
+          <p>Summan du kommer få insatt på ditt bankkonto</p>
+          <div class="input-append">
+                <input class="x-large" id="cash" name="prependedInput" type="text" pattern="[0-9]*">
+                <span class="add-on">SEK</span>
+          </div>
+        </div>
+        <div class="span-one-third">
           <h2>Köpbelopp</h2>
           <p>Summan som dras från kortet.</p>
-          <div class="input-prepend">
+          <div class="input-append">
+                <input class="x-large" id="amount" name="prependedInput" type="text" pattern="[0-9]*">
                 <span class="add-on">SEK</span>
-                <input class="x-large" id="amount" name="prependedInput" type="text">
           </div>
         </div>
         <div class="span-one-third">
           <h2>Avgifter</h2>
           <p>De avgifter som iZettle tar för kortköpet.</p>
-          <div class="input-prepend">
-                <span class="add-on">SEK</span>
+          <div class="input-append">
                 <input class="x-large" id="charges" disabled="disabled" name="prependedInput" type="text">
-          </div>
-       </div>
-        <div class="span-one-third">
-          <h2>Pengar på kontot</h2>
-          <p>Summan du kommer få insatt på ditt bankkonto</p>
-          <div class="input-prepend">
                 <span class="add-on">SEK</span>
-                <input class="x-large" id="cash" name="prependedInput" type="text">
           </div>
         </div>
       </div>
 
       <footer>
-        <p><small>Denna webbplats är inte associerad med iZettle utan framtagen helt för nöjes skull av <a href="http://jonasforsberg.se">Jonas Forsberg</a>. Beräknad med 1,50 kr + 2,75% i avgift. Summorna rundas av och är därför inte exakta.</small></p>
+        <p><small>Denna webbplats är inte associerad med iZettle utan framtagen helt för nöjes skull av <a href="http://jonasforsberg.se">Jonas Forsberg</a>. Beräknad med 2,75% i avgift. Summorna rundas av och är därför inte exakta. Öppen källkod: <a href="https://github.com/himynameisjonas/izettle_calculator">Github</a>.</small></p>
       </footer>
     </div>
-
-    <a href="http://github.com/himynameisjonas/izettle_calculator"><img id="github" src="github.png" alt="Fork me on GitHub"></a>
 
   </body>
 </html>
