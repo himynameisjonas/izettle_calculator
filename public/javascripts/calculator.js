@@ -16,14 +16,12 @@ window.addEventListener('load', function(e) {
 }, false);
 
 function calculateChargesFromAmount(amount){
-    var charges = 1.5;
-    charges += amount * 0.0275;
+    charges = amount * 0.0275;
     return parseFloat(charges.toFixed(2));
 };
 
 function calculateChargesFromCash(cash){
-    var charges = 1.5;
-    charges += ((cash + charges) / 97.25) * 2.75;
+    charges = (cash / 97.25) * 2.75;
     return parseFloat(charges.toFixed(2));
 };
 
@@ -50,12 +48,12 @@ $(function() {
         chargesField.val(prepareOutputValue(charges));
         cashField.val(prepareOutputValue(amount - charges));
     });
-    
-    
+
     cashField.keyup(function(){
         var cash = prepareInputValue(cashField.val());
         var charges = calculateChargesFromCash(cash);
         chargesField.val(prepareOutputValue(charges));
         amountField.val(prepareOutputValue(cash + charges));
     });
+
 });
